@@ -45,9 +45,6 @@ class ChartXY extends Component {
       }],
     }, "chartXYdiv", am4charts.XYChart);
 
-    
-
-    this.chartXY = chartXY;
   }
 
   componentWillUnmount() {
@@ -58,9 +55,12 @@ class ChartXY extends Component {
 
   render() {
     return (
-      <div id="chartXYdiv" style={{ width: "50%", height: "600px" }}></div>
+      <div 
+      ref={chartXY => (this.chartXY = chartXY)} 
+      id="chartXYdiv" 
+      style={{ width: "50%", height: "600px" }}/>
     );
-  }
-}
+  };
+};
 
 export default ChartXY;

@@ -83,7 +83,6 @@ class ChartPie extends Component {
       },
     }, "chartPiediv", am4charts.PieChart);
 
-    this.chartPie = chartPie;
   }
 
   componentWillUnmount() {
@@ -94,9 +93,12 @@ class ChartPie extends Component {
 
   render() {
     return (
-      <div id="chartPiediv" style={{ width: "50%", height: "600px" }}></div>
+      <div 
+        ref={chartPie => (this.chartPie = chartPie)} 
+        id="chartPiediv" 
+        style={{ width: "50%", height: "600px" }}/>
     );
-  }
-}
+  };
+};
 
 export default ChartPie;
